@@ -32,19 +32,7 @@ class Login extends Database
         }
     }
     
-    function check_session()
-	{
-        $db = new Database();
-		$user_check = $_SESSION['user'];
-
-        $ses_sql = $db->select('data_mahasiswa', array('nim' => $user_check));
-
-        $this->login_user = $ses_sql[0]['nama'];
-
-		if (!isset($_SESSION['user'])) {
-			header("location: loginForm.php");
-		}
-	}
+    
 
     function newFunc()
     {
